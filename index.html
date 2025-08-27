@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechInnovate 2023 - Sustentabilidade Tecnológica</title>
+    <style>
+        /* Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .event-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .event-info h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        
+        /* Seção da Turma e Projeto */
+        .project-section {
+            background-color: white;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .project-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .project-header h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .project-header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+        
+        .project-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .project-description {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .project-description h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .testimonials {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .testimonial-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid #4a6491;
+        }
+        
+        .author-info h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        /* Seção Criativa */
+        .creative-section {
+            margin: 40px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            font-size: 2rem;
+        }
+        
+        .info-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .info-card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .info-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .comparison {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+        
+        .comparison-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .before, .after {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .comparison-image {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+            font-weight: bold;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            background-color: #eee;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+            font-weight: bold;
+        }
+        
+        .quiz-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .quiz-option {
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .quiz-option:hover {
+            background: #e9ecef;
+        }
+        
+        .quiz-submit {
+            padding: 10px 20px;
+            background: #4a6491;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .quiz-submit:hover {
+            background: #2c3e50;
+        }
+        
+        /* Rodapé */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .credits {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #ecf0f1;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            .event-info h1 {
+                font-size: 2rem;
+            }
+            
+            .event-info h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container header-content">
+            <div class="event-info">
+                <h1>TechInnovate 2023</h1>
+                <h2>Sustentabilidade Tecnológica</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Página Inicial</a></li>
+                    <li><a href="#programacao">Programação</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        <!-- Seção da Turma e Projeto -->
+        <section class="project-section">
+            <div class="project-header">
+                <h2>Turma de Engenharia de Software - 3º Ano</h2>
+                <p>Projeto: EcoTech Solutions - Tecnologia Verde para um Futuro Sustentável</p>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-description">
+                    <h3>Sobre o Projeto</h3>
+                    <p>O EcoTech Solutions é uma iniciativa inovadora que combina tecnologia e sustentabilidade para criar soluções inteligentes que reduzem o impacto ambiental. Desenvolvemos um sistema IoT para monitoramento de consumo energético em tempo real, integrado com um aplicativo mobile que fornece insights personalizados para reduzir desperdícios.</p>
+                    <p>Nosso projeto utiliza sensores inteligentes, machine learning para análise de padrões de consumo e uma interface intuitiva que incentiva usuários a adotarem hábitos mais sustentáveis, contribuindo para a redução da pegada de carbono.</p>
+                </div>
+                
+                <div class="testimonials">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Participar deste projeto mudou minha perspectiva sobre como a tecnologia pode ser uma aliada da sustentabilidade. Estamos desenvolvendo soluções reais para problemas ambientais urgentes."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image-placeholder">
+                                <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2250%22%20height%3D%2250%22%20viewBox%3D%220%200%2050%2050%22%3E%3Ccircle%20cx%3D%2225%22%20cy%3D%2225%22%20r%3D%2225%22%20fill%3D%22%234a6491%22%2F%3E%3Cpath%20d%3D%22M25%2015c-5.52%200-10%204.48-10%2010s4.48%2010%2010%2010%2010-4.48%2010-10-4.48-10-10-10zm0%2018c-4.42%200-8-3.58-8-8s3.58-8%208-8%208%203.58%208%208-3.58%208-8%208z%22%20fill%3D%22%23f5f7fa%22%2F%3E%3Ccircle%20cx%3D%2225%22%20cy%3D%2220%22%20r%3D%225%22%20fill%3D%22%23f5f7fa%22%2F%3E%3Cpath%20d%3D%22M25%2030c-3.31%200-6%202.69-6%206h12c0-3.31-2.69-6-6-6z%22%20fill%3D%22%23f5f7fa%22%2F%3E%3C%2Fsvg%3E" alt="Foto do estudante" class="author-image">
+                            </div>
+                            <div class="author-info">
+                                <h4>Carlos Silva</h4>
+                                <p>Líder de Desenvolvimento</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Esta experiência está nos preparando para os desafios reais do mercado de trabalho, enquanto contribuímos para um planeta mais verde. A integração entre hardware e software que estamos desenvolvendo é incrível!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image-placeholder">
+                                <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2250%22%20height%3D%2250%22%20viewBox%3D%220%200%2050%2050%22%3E%3Ccircle%20cx%3D%2225%22%20cy%3D%2225%22%20r%3D%2225%22%20fill%3D%22%234a6491%22%2F%3E%3Cpath%20d%3D%22M25%2015c-5.52%200-10%204.48-10%2010s4.48%2010%2010%2010%2010-4.48%2010-10-4.48-10-10-10zm0%2018c-4.42%200-8-3.58-8-8s3.58-8%208-8%208%203.58%208%208-3.58%208-8%208z%22%20fill%3D%22%23f5f7fa%22%2F%3E%3Ccircle%20cx%3D%2225%22%20cy%3D%2220%22%20r%3D%225%22%20fill%3D%22%23f5f7fa%22%2F%3E%3Cpath%20d%3D%22M25%2030c-3.31%200-6%202.69-6%206h12c0-3.31-2.69-6-6-6z%22%20fill%3D%22%23f5f7fa%22%2F%3E%3C%2Fsvg%3E" alt="Foto da estudante" class="author-image">
+                            </div>
+                            <div class="author-info">
+                                <h4>Marina Oliveira</h4>
+                                <p>Especialista em IoT</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Criativa -->
+        <section class="creative-section">
+            <h2 class="section-title">Tecnologia e Sustentabilidade</h2>
+            
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3>O Problema</h3>
+                    <p>O consumo energético residencial e corporativo representa mais de 40% da energia total consumida em centros urbanos. Grande parte desse consumo é desperdiçado devido a hábitos inadequados e falta de conscientização.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Nossa Solução</h3>
+                    <p>Desenvolvemos um sistema integrado de monitoramento que identifica padrões de desperdício e sugere ações corretivas. Nosso algoritmo de machine learning aprende com os hábitos dos usuários e oferece recomendações personalizadas.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Impacto Esperado</h3>
+                    <p>Estimamos que a implementação em larga escala do nosso sistema pode reduzir em até 30% o consumo energético em residências e em 25% em ambientes corporativos, contribuindo significativamente para a redução de emissões de carbono.</p>
+                </div>
+            </div>
+            
+            <div class="comparison">
+                <h3>Comparação: Antes e Depois</h3>
+                <div class="comparison-content">
+                    <div class="before">
+                        <div class="comparison-image">Consumo Elevado</div>
+                        <h4>Antes do EcoTech</h4>
+                        <p>Desperdício de energia, falta de visibilidade sobre consumo, custos elevados e alto impacto ambiental.</p>
+                    </div>
+                    
+                    <div class="after">
+                        <div class="comparison-image">Consumo Otimizado</div>
+                        <h4>Depois do EcoTech</h4>
+                        <p>Controle inteligente, economia de até 30%, relatórios detalhados e contribuição para o meio ambiente.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery">
+                <div class="gallery-item">Protótipo 1</div>
+                <div class="gallery-item">Interface App</div>
+                <div class="gallery-item">Sensor IoT</div>
+                <div class="gallery-item">Dashboard</div>
+            </div>
+            
+            <div class="quiz-container">
+                <h3>Teste seus conhecimentos sobre sustentabilidade</h3>
+                
+                <div class="quiz-question">
+                    <p>1. Qual dessas fontes é considerada energia renovável?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option">a) Carvão mineral</div>
+                        <div class="quiz-option">b) Gás natural</div>
+                        <div class="quiz-option">c) Energia solar</div>
+                        <div class="quiz-option">d) Petróleo</div>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p>2. Qual porcentagem de energia elétrica pode ser economizada com o uso de lâmpadas LED em comparação com as incandescentes?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option">a) 10-20%</div>
+                        <div class="quiz-option">b) 30-40%</div>
+                        <div class="quiz-option">c) 60-80%</div>
+                        <div class="quiz-option">d) 90-95%</div>
+                    </div>
+                </div>
+                
+                <button class="quiz-submit">Verificar Respostas</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container footer-content">
+            <div class="event-info">
+                <h3>TechInnovate 2023</h3>
+                <p>Inovação e tecnologia para um futuro sustentável</p>
+            </div>
+            
+            <div class="credits">
+                <p>Site desenvolvido por Alunos de Engenharia de Software - Universidade Tecnológica</p>
+                <p>© 2023 Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
