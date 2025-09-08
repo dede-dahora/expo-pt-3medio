@@ -3,893 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terceirão 2025 - Redução de água doce no mundo e seus impactos</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Redução de água doce no mundo e seus impactos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #4a6491;
-            --accent: #00b894;
-            --light: #f5f7fa;
-            --dark: #2d3436;
-            --text: #2d3436;
-            --text-light: #7f8c8d;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        /* Estilos personalizados para animações e tema aquático */
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 50%, #90CAF9 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--primary);
+        .header-gradient {
+            background: linear-gradient(90deg, #1976D2, #42A5F5);
         }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 25px 0;
-            position: sticky;
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .wave {
+            position: relative;
+            overflow: hidden;
+        }
+        .wave::after {
+            content: '';
+            position: absolute;
             top: 0;
-            z-index: 1000;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iMCAwIDEyMDAgNDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9IiMwMDgwRkYiIGZpbGwtb3BhY2l0eT0iMC4xIiBkPSJNMCAwQzMwMCAxODAgMTEwMCA0MDAgNDAwIDQwMEwxMjAwIDQwMFYwTOFowIj48L3BhdGg+PC9zdmU+') repeat-x;
+            background-size: 100% 100%;
+            animation: waveFlow 5s ease-in-out infinite;
+        }
+        @keyframes waveFlow {
+            0% { background-position: 0 0; }
+            100% { background-position: 400px 0; }
+        }
+        .ice-melt {
+            position: relative;
+            border-radius: 8px;
+            transition: all 2s ease-in-out;
+        }
+        .ice-melt.melted {
+            background-color: transparent;
+            opacity: 0.5;
+        }
+        .ice-top {
+            width: 100%;
+            height: 20px;
+            background: #FFFFFF;
+            border-radius: 8px 8px 0 0;
+            transition: transform 2s ease-out;
+        }
+        .ice-melt.melted .ice-top {
+            transform: scaleX(0);
+        }
+        canvas {
+            border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .event-info h1 {
-            font-size: 2.8rem;
-            margin-bottom: 5px;
-            color: white;
-            letter-spacing: 1px;
-        }
-        
-        .event-info h2 {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-            position: relative;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            padding: 8px 5px;
-            position: relative;
-        }
-        
-        nav ul li a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--accent);
-            transition: var(--transition);
-        }
-        
-        nav ul li a:hover {
-            color: var(--accent);
-        }
-        
-        nav ul li a:hover:after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-            animation: fadeIn 1.5s ease;
-        }
-        
-        .hero h2 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+        .quiz-option.correct {
+            background-color: #10B981;
             color: white;
         }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            background: var(--accent);
+        .quiz-option.incorrect {
+            background-color: #EF4444;
             color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            box-shadow: var(--shadow);
         }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0, 184, 148, 0.3);
+        .gallery-img {
+            transition: transform 0.3s ease;
         }
-        
-        /* Project Section */
-        .project-section {
-            background-color: white;
-            margin: 80px 0;
-            padding: 60px 40px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-section:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--accent), var(--secondary));
-        }
-        
-        .project-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .project-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .project-header h2:after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            background: var(--accent);
-            bottom: -10px;
-            left: 25%;
-        }
-        
-        .project-header p {
-            color: var(--text-light);
-            font-size: 1.2rem;
-        }
-        
-        .project-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .project-description {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .project-description h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--secondary);
-        }
-        
-        .project-description p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .testimonials {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .testimonial-card {
-            background-color: var(--light);
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .testimonial-card:before {
-            content: '\201C';
-            font-size: 5rem;
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            color: rgba(44, 62, 80, 0.1);
-            font-family: Arial, sans-serif;
-        }
-        
-        .testimonial-content {
-            font-style: italic;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 20px;
-            border: 3px solid var(--secondary);
-            box-shadow: var(--shadow);
-        }
-        
-        .author-info h4 {
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-        
-        .author-info p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-        
-        /* Creative Section */
-        .creative-section {
-            margin: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            width: 100px;
-            height: 4px;
-            background: var(--accent);
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .info-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        
-        .info-card {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            padding: 40px 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-        }
-        
-        .info-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .info-card i {
-            font-size: 3rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-        
-        .info-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .comparison {
-            background: white;
-            padding: 50px 40px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            margin-bottom: 60px;
-        }
-        
-        .comparison h3 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-        }
-        
-        .comparison-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-        
-        .before, .after {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-        
-        .comparison-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border-radius: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .comparison-image:before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.2);
-        }
-        
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 60px;
-        }
-        
-        .gallery-item {
-            height: 250px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: var(--transition);
-            cursor: pointer;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .gallery-item:before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.2);
-        }
-        
-        .gallery-item:hover {
+        .gallery-img:hover {
             transform: scale(1.05);
         }
-        
-        .quiz-container {
-            background: white;
-            padding: 50px 40px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-        }
-        
-        .quiz-container h3 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 30px;
-        }
-        
-        .quiz-question {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: var(--light);
-            border-radius: 10px;
-        }
-        
-        .quiz-options {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .quiz-option {
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: var(--transition);
-            border: 2px solid #e0e0e0;
-            text-align: center;
-        }
-        
-        .quiz-option:hover {
-            border-color: var(--accent);
-            transform: translateY(-3px);
-        }
-        
-        .quiz-option.selected {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-        
-        .quiz-submit {
-            display: block;
-            margin: 30px auto 0;
-            padding: 15px 40px;
-            background: var(--secondary);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 600;
-        }
-        
-        .quiz-submit:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        /* Footer */
         footer {
-            background: var(--primary);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .footer-section h3 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-section h3:after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 2px;
-            background: var(--accent);
-            bottom: 0;
-            left: 0;
-        }
-        
-        .footer-section p {
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: var(--transition);
-        }
-        
-        .social-icons a:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
-        }
-        
-        .credits {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Responsiveness */
-        @media (max-width: 992px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                margin-top: 20px;
-                justify-content: center;
-            }
-            
-            .hero h2 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .quiz-options {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-            
-            nav ul li {
-                margin-left: 0;
-            }
-            
-            .project-section, .comparison, .quiz-container {
-                padding: 40px 20px;
-            }
-            
-            .project-content, .comparison-content {
-                flex-direction: column;
-            }
+            background: linear-gradient(90deg, #0D47A1, #1976D2);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col text-gray-800">
     <!-- Cabeçalho -->
-    <header>
-        <div class="container header-content">
-            <div class="event-info">
-                <h1>Terceirão 2025</h1>
-                <h2>Redução de água doce no mundo e seus impactos</h2>
+    <header class="header-gradient text-white py-6 shadow-2xl wave">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <div class="flex-1">
+                <h1 class="text-3xl md:text-4xl font-extrabold tracking-wide">2025, Ano Internacional da Preservação das Geleiras.</h1>
+                <p class="text-xl mt-2 font-light">Redução da Água Doce no Mundo e seus Impactos</p>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#projeto">Projeto</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
+            <nav class="hidden md:block">
+                <a href="#main" class="btn-hover bg-white text-blue-700 px-6 py-3 rounded-full font-semibold shadow-lg">Página Principal</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>Redução de água doce no mundo e seus impactos</h2>
-            <p>Descubra como a redução de água doce no mundo é causada</p>
-            <a href="#projeto" class="btn">Conheça o Projeto</a>
-        </div>
-    </section>
+    <main id="main" class="flex-grow container mx-auto px-6 py-10 space-y-12">
+        <!-- Seção da Turma e Projeto -->
+        <section class="bg-white card-shadow rounded-2xl p-8 md:p-10">
+            <h2 class="text-3xl font-bold text-blue-700 mb-6 border-b-4 border-blue-300 pb-2">Apresentação da Turma e Projeto</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-semibold text-gray-700">Turma: 3º ano do Ensino Médio</h3>
+                    <h4 class="text-xl font-semibold text-blue-600">Título do Projeto: Redução de água doce no mundo e seus impactos</h4>
+                    <p class="text-gray-600 leading-relaxed">Este projeto aborda os efeitos devastadores da redução da água doce global, incluindo secas prolongadas, escassez agrícola e migrações forçadas devido às alterações climáticas. Utilizamos dados científicos e simulações virtuais para destacar a urgência da preservação das geleiras, que abastecem mais de 70% das reservas de água doce do planeta.</p>
+                    <blockquote class="italic text-gray-500 border-l-4 border-blue-500 pl-6 bg-blue-50 py-4 rounded-r-lg">
+                        "Como representante da turma, creio firmemente que ações imediatas são essenciais para preservar nossas geleiras e assegurar o acesso à água para gerações futuras." - Ana Pereira, Líder da Turma.
+                    </blockquote>
+                    <p class="text-sm text-gray-400">Outros membros da equipe fornecerão depoimentos adicionais em vídeos interativos.</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="card-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/87e1496b-80b6-4151-883d-3cdeb072042a.png" alt="Grupo de estudantes jovens em um cenário de laboratório com modelos de geleiras derretendo, vestidos com coletes de pesquisa, em uma composição com fundos azuis e verdes representando água e montanhas geladas" class="w-full h-auto rounded-lg shadow-md gallery-img">
+                    </div>
+                    <div class="card-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7b6e8a4d-4729-478e-9a2f-677087314688.png" alt="Vista próxima de uma geleira azul-clara com água escorrendo em riachos, moldura com elementos de preservação como cadeados simbólicos, com cores suaves de branco e azul para destacar a frieza glacial e o risco de derretimento" class="w-full h-auto rounded-lg shadow-md gallery-img">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Seção da Turma e Projeto -->
-    <section class="project-section container fade-in" id="projeto">
-        <div class="project-header">
-            <h2>Turma de Engenharia de Software - 3º Ano</h2>
-            <p>Projeto: EcoTech Solutions - Tecnologia Verde para um Futuro Sustentável</p>
-        </div>
-        
-        <div class="project-content">
-            <div class="project-description">
-                <h3>Sobre o Projeto</h3>
-                <p>O EcoTech Solutions é uma iniciativa inovadora que combina tecnologia e sustentabilidade para criar soluções inteligentes que reduzem o impacto ambiental. Desenvolvemos um sistema IoT para monitoramento de consumo energético em tempo real, integrado com um aplicativo mobile que fornece insights personalizados para reduzir desperdícios.</p>
-                <p>Nosso projeto utiliza sensores inteligentes, machine learning para análise de padrões de consumo e uma interface intuitiva que incentiva usuários a adotarem hábitos mais sustentáveis, contribuindo para a redução da pegada de carbono.</p>
-                <a href="#creative" class="btn">Saiba Mais</a>
-            </div>
-            
-            <div class="testimonials">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Participar deste projeto mudou minha perspectiva sobre como a tecnologia pode ser uma aliada da sustentabilidade. Estamos desenvolvendo soluções reais para problemas ambientais urgentes."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image-placeholder">
-                            <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%2230%22%20fill%3D%22%234a6491%22%2F%3E%3Cpath%20d%3D%22M30%2015c-8.28%200-15%206.72-15%2015s6.72%2015%2015%2015%2015-6.72%2015-15-6.72-15-15-15zm0%2027c-6.63%200-12-5.37-12-12s5.37-12%2012-12%2012%205.37%2012%2012-5.37%2012-12%2012z%22%20fill%3D%22%23f5f7fa%22%2F%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2224%22%20r%3D%226%22%20fill%3D%22%23f5f7fa%22%2F%3E%3Cpath%20d%3D%22M30%2036c-4.97%200-9%204.03-9%209h18c0-4.97-4.03-9-9-9z%22%20fill%3D%22%23f5f7fa%22%2F%3E%3C%2Fsvg%3E" alt="Foto do estudante" class="author-image">
-                        </div>
-                        <div class="author-info">
-                            <h4>Carlos Silva</h4>
-                            <p>Líder de Desenvolvimento</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Esta experiência está nos preparando para os desafios reais do mercado de trabalho, enquanto contribuímos para um planeta mais verde. A integração entre hardware e software que estamos desenvolvendo é incrível!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image-placeholder">
-                            <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%2230%22%20fill%3D%22%234a6491%22%2F%3E%3Cpath%20d%3D%22M30%2015c-8.28%200-15%206.72-15%2015s6.72%2015%2015%2015%2015-6.72%2015-15-6.72-15-15-15zm0%2027c-6.63%200-12-5.37-12-12s5.37-12%2012-12%2012%205.37%2012%2012-5.37%2012-12%2012z%22%20fill%3D%22%23f5f7fa%22%2F%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2224%22%20r%3D%226%22%20fill%3D%22%23f5f7fa%22%2F%3E%3Cpath%20d%3D%22M30%2036c-4.97%200-9%204.03-9%209h18c0-4.97-4.03-9-9-9z%22%20fill%3D%22%23f5f7fa%22%2F%3E%3C%2Fsvg%3E" alt="Foto da estudante" class="author-image">
-                        </div>
-                        <div class="author-info">
-                            <h4>Marina Oliveira</h4>
-                            <p>Especialista em IoT</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Seções Criativas -->
+        <section class="space-y-10">
+            <h2 class="text-3xl font-bold text-blue-700 text-center mb-8">Explorações Criativas sobre o Tema</h2>
 
-    <!-- Seção Criativa -->
-    <section class="creative-section container" id="creative">
-        <h2 class="section-title fade-in">Tecnologia e Sustentabilidade</h2>
-        
-        <div class="info-cards">
-            <div class="info-card fade-in">
-                <i class="fas fa-exclamation-triangle"></i>
-                <h3>O Problema</h3>
-                <p>O consumo energético residencial e corporativo representa mais de 40% da energia total consumida em centros urbanos. Grande parte desse consumo é desperdiçado devido a hábitos inadequados e falta de conscientização.</p>
+            <!-- Infográfico -->
+            <div class="bg-white card-shadow rounded-2xl p-8 md:p-10">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Infográfico: Estatísticas da Redução da Água Doce</h3>
+                <canvas id="waterChart" width="400" height="200" class="mx-auto block"></canvas>
+                <p class="text-center text-sm text-gray-500 mt-6">Dados aproximados baseados em fontes como IPCC: Destacar a perda significativa de gelo desde 1970.</p>
             </div>
-            
-            <div class="info-card fade-in">
-                <i class="fas fa-lightbulb"></i>
-                <h3>Nossa Solução</h3>
-                <p>Desenvolvemos um sistema integrado de monitoramento que identifica padrões de desperdício e sugere ações corretivas. Nosso algoritmo de machine learning aprende com os hábitos dos usuários e oferece recomendações personalizadas.</p>
-            </div>
-            
-            <div class="info-card fade-in">
-                <i class="fas fa-chart-line"></i>
-                <h3>Impacto Esperado</h3>
-                <p>Estimamos que a implementação em larga escala do nosso sistema pode reduzir em até 30% o consumo energético em residências e em 25% em ambientes corporativos, contribuindo significativamente para a redução de emissões de carbono.</p>
-            </div>
-        </div>
-        
-        <div class="comparison fade-in">
-            <h3>Comparação: Antes e Depois</h3>
-            <div class="comparison-content">
-                <div class="before">
-                    <div class="comparison-image">Consumo Elevado</div>
-                    <h4>Antes do EcoTech</h4>
-                    <p>Desperdício de energia, falta de visibilidade sobre consumo, custos elevados e alto impacto ambiental.</p>
+
+            <!-- Animação do Derretimento -->
+            <div class="bg-white card-shadow rounded-2xl p-8 md:p-10 text-center">
+                <h3 class="text-2xl font-semibold mb-6">Animação Interativa: Derretimento de Uma Geleira</h3>
+                <div class="ice-melt w-64 h-24 mx-auto bg-gradient-to-br from-blue-200 to-blue-400 relative rounded-xl overflow-hidden" id="iceBlock">
+                    <div class="ice-top w-full h-6 bg-white rounded-t-xl"></div>
+                    <p class="absolute inset-0 flex items-center justify-center text-white font-bold">Gelo Polar</p>
                 </div>
-                
-                <div class="after">
-                    <div class="comparison-image">Consumo Otimizado</div>
-                    <h4>Depois do EcoTech</h4>
-                    <p>Controle inteligente, economia de até 30%, relatórios detalhados e contribuição para o meio ambiente.</p>
-                </div>
+                <button id="meltBtn" class="btn-hover bg-red-500 text-white px-8 py-4 rounded-full font-semibold mt-6 shadow-lg">Iniciar Derretimento</button>
             </div>
-        </div>
-        
-        <h3 class="section-title fade-in">Galeria do Projeto</h3>
-        <div class="gallery">
-            <div class="gallery-item fade-in">Protótipo 1</div>
-            <div class="gallery-item fade-in">Interface App</div>
-            <div class="gallery-item fade-in">Sensor IoT</div>
-            <div class="gallery-item fade-in">Dashboard</div>
-        </div>
-        
-        <div class="quiz-container fade-in">
-            <h3>Teste seus conhecimentos sobre sustentabilidade</h3>
-            
-            <div class="quiz-question">
-                <p>1. Qual dessas fontes é considerada energia renovável?</p>
-                <div class="quiz-options">
-                    <div class="quiz-option">a) Carvão mineral</div>
-                    <div class="quiz-option">b) Gás natural</div>
-                    <div class="quiz-option">c) Energia solar</div>
-                    <div class="quiz-option">d) Petróleo</div>
+
+            <!-- Comparação Antes/Depois -->
+            <div class="bg-white card-shadow rounded-2xl p-8 md:p-10">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Comparação Visual: Geleira Antes e Depois</h3>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <h4 class="text-center text-lg font-medium mb-4">Antes (Décadas Passadas)</h4>
+                        <div class="card-image">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d5bbcbf5-ef35-4d0a-9788-d64523413ce5.png" alt="Vista prospetiva ampla de uma geleira imponente e extensa, coberta de neve branca pura, com picos montanhosos verdes ao fundo, composição horizontal em cores frias de azul e branco, evocando paz e integridade glacial pre-derretimento" class="w-full h-auto rounded-lg shadow-md gallery-img">
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="text-center text-lg font-medium mb-4">Depois (Atualidade)</h4>
+                        <div class="card-image">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0e0a8db1-7608-407e-8207-ddc6ed61dbcd.png" alt="Vista debilitada de uma geleira encolhida e rachada, com água azul turquesa correndo em fissuras, fundo de montanhas áridas e marrons, composição com tons quentes de vermelho e laranja indicando urgência e perda, com gotas de água simbólicas caindo para representar o derretimento rápido" class="w-full h-auto rounded-lg shadow-md gallery-img">
+                        </div>
+                    </div>
+                </div>
+                <button id="toggleCompare" class="btn-hover bg-yellow-500 text-white px-8 py-4 rounded-full font-semibold mt-8 shadow-lg mx-auto block">Alternar Visões</button>
+            </div>
+
+            <!-- Galeria em Miniatura -->
+            <div class="bg-white card-shadow rounded-2xl p-8 md:p-10">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Galeria em Miniatura: Momentos de Preservação</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ca762aa1-ae0f-4108-9a13-085ae2d0a1ad.png" alt="Pesquisador solitário em um abrigo de pesquisa glacial, observando uma geleira através de instrumentos científicos, com aurora boreal azul no céu noturno, composição vertical em tons frios de azul, verde e branco" class="w-full h-auto rounded-lg shadow-md gallery-img">
+                    </div>
+                    <div class="card-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b1c39938-2939-499f-bd0c-b5845ca2daa9.png" alt="Grupo de ativistas plantando árvores em uma zona de reflorestamento perto de um rio cristalino, com banners de preservação da água, composição horizontal vibrante em verdes e azuis, simbolizando esperança e ação comunitária" class="w-full h-auto rounded-lg shadow-md gallery-img">
+                    </div>
+                    <div class="card-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/680f41e9-f426-4429-9929-8279cafab593.png" alt="Ilustração artística de uma queda d'água forte fluindo de uma geleira ao oceano, com raios de sol refletindo na água espumosa, composição diagonal em cores frescas de azul claro e branco, destacando a conexão entre gelo e vida marinha" class="w-full h-auto rounded-lg shadow-md gallery-img">
+                    </div>
+                    <div class="card-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2f9465b5-0544-42b6-bf5a-e8f2c882f495.png" alt="Mundo estilizado com geleiras em destaque em continentes selecionados, usando ícones de preservação como escudos de gelo, composição global arredondada em tons de azul e verde, representando uma visão internacional unificada" class="w-full h-auto rounded-lg shadow-md gallery-img">
+                    </div>
                 </div>
             </div>
-            
-            <div class="quiz-question">
-                <p>2. Qual porcentagem de energia elétrica pode ser economizada com o uso de lâmpadas LED em comparação com as incandescentes?</p>
-                <div class="quiz-options">
-                    <div class="quiz-option">a) 10-20%</div>
-                    <div class="quiz-option">b) 30-40%</div>
-                    <div class="quiz-option">c) 60-80%</div>
-                    <div class="quiz-option">d) 90-95%</div>
+
+            <!-- Quiz Interativo -->
+            <div class="bg-white card-shadow rounded-2xl p-8 md:p-10">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Quiz Educativo: Conhecimento sobre Geleiras e Água Doce</h3>
+                <div id="quizContainer" class="text-center">
+                    <div id="questionContainer">
+                        <p id="question" class="text-xl font-semibold mb-6 leading-relaxed"></p>
+                        <div class="space-y-4 max-w-md mx-auto">
+                            <button id="optionA" class="quiz-option btn-hover block w-full bg-gray-100 hover:bg-gray-200 py-3 px-4 rounded-lg font-medium" data-answer="A"></button>
+                            <button id="optionB" class="quiz-option btn-hover block w-full bg-gray-100 hover:bg-gray-200 py-3 px-4 rounded-lg font-medium" data-answer="B"></button>
+                            <button id="optionC" class="quiz-option btn-hover block w-full bg-gray-100 hover:bg-gray-200 py-3 px-4 rounded-lg font-medium" data-answer="C"></button>
+                            <button id="optionD" class="quiz-option btn-hover block w-full bg-gray-100 hover:bg-gray-200 py-3 px-4 rounded-lg font-medium" data-answer="D"></button>
+                        </div>
+                        <div id="feedback" class="mt-6 hidden">
+                            <p id="feedbackText" class="text-lg font-medium"></p>
+                        </div>
+                    </div>
+                    <button id="nextBtn" class="btn-hover bg-blue-600 text-white px-8 py-3 rounded-full font-semibold mt-8 shadow-lg hidden mx-auto">Próxima Pergunta</button>
+                    <div id="scoreContainer" class="mt-8 hidden">
+                        <p class="text-2xl font-bold">Pontuação Final: <span id="score" class="text-blue-600"></span>/5</p>
+                        <p class="text-lg text-gray-600 mt-2">Parabéns por completar o quiz! Saiba mais sobre preservação ambiental para ajudar o nosso planeta.</p>
+                    </div>
                 </div>
             </div>
-            
-            <button class="quiz-submit">Verificar Respostas</button>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Rodapé -->
-    <footer id="contato">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>TechInnovate 2023</h3>
-                    <p>Inovação e tecnologia para um futuro sustentável</p>
-                    <p>Universidade Tecnológica</p>
-                    <p>Brasil</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contato</h3>
-                    <p><i class="fas fa-envelope"></i> contato@techinnovate.com</p>
-                    <p><i class="fas fa-phone"></i> (11) 3456-7890</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Av. Tecnologia, 123 - São Paulo</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Links Rápidos</h3>
-                    <p><a href="#home">Início</a></p>
-                    <p><a href="#projeto">Projeto</a></p>
-                    <p><a href="#creative">Sustentabilidade</a></p>
-                    <p><a href="#contato">Contato</a></p>
-                </div>
-            </div>
-            
-            <div class="credits">
-                <p>Site desenvolvido por Alunos de Engenharia de Software - Universidade Tecnológica</p>
-                <p>© 2023 TechInnovate. Todos os direitos reservados.</p>
-            </div>
+    <footer class="footer text-white py-8">
+        <div class="container mx-auto text-center px-6">
+            <p class="text-xl font-semibold">Créditos: Desenvolvido por  e Equipe de Desenvolvimento Sustentável</p>
+            <p class="text-sm mt-2 opacity-75">© 2023 - Todos os direitos reservados. Apoiado pelo Ano Internacional da Preservação das Geleiras.</p>
         </div>
     </footer>
 
     <script>
-        // Animação de scroll para elementos com classe fade-in
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const fadeInOptions = {
-                threshold: 0.3,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const fadeInObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
+        // Lógica do Quiz
+        const questions = [
+            {
+                question: "Qual porcentagem aproximada da água doce do mundo está armazenada em geleiras?",
+                options: ["30%", "50%", "70%", "90%"],
+                correct: "C",
+                explanation: "Aproximadamente 70% da água doce terrestre está congelada em geleiras e calotas polares."
+            },
+            {
+                question: "O que acelera primariamente o derretimento das geleiras?",
+                options: ["Poluição atmosférica direta", "Mudanças climáticas globais", "Desmatamento local", "Sobrepesca oceânica"],
+                correct: "B",
+                explanation: "As mudanças climáticas, causadas principalmente pela emissão de gases de efeito estufa, levam ao aquecimento global e ao derretimento acelerado."
+            },
+            {
+                question: "Qual é um dos principais impactos da redução da água doce?",
+                options: ["Aumento das inundações em rios", "Secas prolongadas e escassez hídrica", "Menos chuvas ácidas", "Crescimento excessivo de florestas"],
+                correct: "B",
+                explanation: "A redução da água doce contribui para secas, afetando a agricultura, o abastecimento urbano e ecossistemas aquáticos."
+            },
+            {
+                question: "Qual é o objetivo do Ano Internacional da Preservação das Geleiras?",
+                options: ["Ignorar os desafios ambientais", "Aumentar a conscientização e promover ações preservadoras", "Intensificar o mineração de gelo", "Reduzir a biodiversidade glacial"],
+                correct: "B",
+                explanation: "Este ano visa educar e mobilizar esforços globais para proteger geleiras contra os efeitos das mudanças climáticas."
+            },
+            {
+                question: "Como podemos ajudar a preservar geleiras?",
+                options: ["Aumentar o consumo de plásticos de uso único", "Reduzir emissões de carbono através de energias renováveis", "Desflorestar áreas protegidas", "Ignorar reciclagem"],
+                correct: "B",
+                explanation: "A redução de emissões de carbono, adotando práticas sustentáveis, é crucial para mitigar o aquecimento e preservar geleiras."
+            }
+        ];
+        let currentQuestion = 0;
+        let score = 0;
+        const questionEl = document.getElementById('question');
+        const optionsEl = document.querySelectorAll('.quiz-option');
+        const nextBtn = document.getElementById('nextBtn');
+        const feedbackEl = document.getElementById('feedback');
+        const feedbackText = document.getElementById('feedbackText');
+        const scoreContainer = document.getElementById('scoreContainer');
+        const scoreEl = document.getElementById('score');
+
+        function loadQuestion() {
+            if (currentQuestion < questions.length) {
+                const q = questions[currentQuestion];
+                questionEl.textContent = q.question;
+                optionsEl.forEach((el, i) => {
+                    el.textContent = q.options[i];
+                    el.classList.remove('correct', 'incorrect');
+                    el.disabled = false;
+                    el.onclick = () => {
+                        optionsEl.forEach(btn => btn.disabled = true);
+                        if (el.dataset.answer === q.correct) {
+                            el.classList.add('correct');
+                            score++;
+                            feedbackText.textContent = "Correto! " + q.explanation;
+                        } else {
+                            el.classList.add('incorrect');
+                            feedbackText.textContent = "Incorreto. " + q.explanation;
+                        }
+                        feedbackEl.classList.remove('hidden');
+                        nextBtn.classList.remove('hidden');
+                    };
                 });
-            }, fadeInOptions);
-            
-            fadeElements.forEach(element => {
-                fadeInObserver.observe(element);
-            });
-            
-            // Quiz interativo
-            const quizOptions = document.querySelectorAll('.quiz-option');
-            
-            quizOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    // Remove a seleção anterior na mesma pergunta
-                    const parentQuestion = this.closest('.quiz-question');
-                    parentQuestion.querySelectorAll('.quiz-option').forEach(opt => {
-                        opt.classList.remove('selected');
-                    });
-                    
-                    // Seleciona a opção atual
-                    this.classList.add('selected');
-                });
-            });
-            
-            // Smooth scroll para links internos
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        });
+            } else {
+                document.getElementById('questionContainer').classList.add('hidden');
+                nextBtn.classList.add('hidden');
+                feedbackEl.classList.add('hidden');
+                scoreEl.textContent = score;
+                scoreContainer.classList.remove('hidden');
+            }
+        }
+        nextBtn.onclick = () => {
+            feedbackEl.classList.add('hidden');
+            currentQuestion++;
+            loadQuestion();
+        };
+        loadQuestion();
+
+        // Lógica da Animação do Gelo
+        const iceBlock = document.getElementById('iceBlock');
+        document.getElementById('meltBtn').onclick = () => {
+            iceBlock.classList.add('melted');
+        };
+
+        // Lógica de Alternar Comparação
+        const toggleCompare = document.getElementById('toggleCompare');
+        toggleCompare.onclick = () => {
+            const images = toggleCompare.previousElementSibling.querySelectorAll('img');
+            images.forEach(img => img.style.transform = img.style.transform ? 'scaleX(-1)' : 'scaleX(1)');
+        };
+
+        // Infográfico com Canvas
+        const ctx = document.getElementById('waterChart').getContext('2d');
+        ctx.fillStyle = '#F3F4F6';
+        ctx.fillRect(0, 0, 400, 200);
+        ctx.fillStyle = '#1E40AF';
+        ctx.fillRect(50, 150, 80, -60);
+        ctx.fillStyle = '#10B981';
+        ctx.fillRect(150, 150, 80, -40);
+        ctx.fillStyle = '#EF4444';
+        ctx.fillRect(250, 150, 80, -30);
+        ctx.fillStyle = '#1F2937';
+        ctx.font = '14px Arial';
+        ctx.fillText('Geleiras (70%)', 30, 170);
+        ctx.fillText('Rios (20%)', 135, 170);
+        ctx.fillText('Redução (10%)', 235, 170);
     </script>
 </body>
 </html>
+</content>
+</create_file>
